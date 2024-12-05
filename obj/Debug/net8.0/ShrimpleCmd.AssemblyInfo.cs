@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ShrimpleCmd")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a19d60980181680393e745a02ce29f9a13d1d9e3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+04c58d2de2c6029d1e6f0f41b33a29c14de3fe79")]
 [assembly: System.Reflection.AssemblyProductAttribute("ShrimpleCmd")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ShrimpleCmd")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
