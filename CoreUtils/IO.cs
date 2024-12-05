@@ -3,8 +3,6 @@ using System.IO;
 
 namespace CoreUtils.IOHandler {
     public class IO {
-
-        // Giant thing i spent too much time on.
         public static string ReadFile(string filePath) {
             if (File.Exists(filePath)) {
                 return File.ReadAllText(filePath);
