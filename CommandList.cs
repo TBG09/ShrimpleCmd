@@ -20,7 +20,8 @@ namespace CommandListClass
             commandMap.Add("ls", commands.dir.Dir.Execute);
             commandMap.Add("pwd", commands.pwd.Pwd.Execute);
             commandMap.Add("exit", commands.exit.Exit.Execute);
-
+            commandMap.Add("cd", commands.cd.Cd.Execute);
+            commandMap.Add("rm", commands.rm.Rm.Execute);
         }
         public void ExecuteCommand(string input)
         {

@@ -7,11 +7,12 @@ namespace PublicVars
 
         public static string currentDirectory;
         public static string currentDirectoryName;
+        public static string userHomeFolder;
 
         static PublicVariables()
         {
- 
-            currentDirectory = Directory.GetCurrentDirectory();
+            userHomeFolder = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+            currentDirectory = userHomeFolder;
             currentDirectoryName = Path.GetDirectoryName(currentDirectory);
         }
     }

@@ -12,3 +12,4 @@ C:\Users\Rashi\Documents\Vscode\Projects\ShrimpleCmd\obj\Debug\net8.0\refint\Shr
 C:\Users\Rashi\Documents\Vscode\Projects\ShrimpleCmd\obj\Debug\net8.0\ShrimpleCmd.pdb
 C:\Users\Rashi\Documents\Vscode\Projects\ShrimpleCmd\obj\Debug\net8.0\ShrimpleCmd.genruntimeconfig.cache
 C:\Users\Rashi\Documents\Vscode\Projects\ShrimpleCmd\obj\Debug\net8.0\ref\ShrimpleCmd.dll
+C:\Users\Rashi\Documents\Vscode\Projects\ShrimpleCmd\obj\Debug\net8.0\ShrimpleCmd.sourcelink.json
