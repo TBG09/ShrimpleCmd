@@ -1,8 +1,11 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
-using System.Reflection;
+using System.Text.RegularExpressions;
 using CommandListClass;
 using PublicVars;
+using System.Diagnostics;
+using System.Reflection;
 
 namespace ConsoleApp
 {
@@ -21,9 +24,22 @@ namespace ConsoleApp
                 {
                     continue;
                 }
+
                 userInput = ReplaceInternalVariables(userInput);
 
-                commandList.ExecuteCommand(userInput);
+                var expandedCommands = ExpandRangeSyntax(userInput);
+
+                foreach (var command in expandedCommands)
+                {
+                    if (command.StartsWith("#") && command.EndsWith("#") && !command.Contains("\""))
+                    {
+                        ExecuteFile(command.Substring(1, command.Length - 2));
+                    }
+                    else
+                    {
+                        commandList.ExecuteCommand(command);
+                    }
+                }
 
                 if (userInput.ToLower() == "exit")
                 {
@@ -35,8 +51,9 @@ namespace ConsoleApp
         static void ShowStartupText()
         {
             Console.WriteLine("*********************************");
-            Console.WriteLine("Welcome to Shrimple Cmd");
+            Console.WriteLine("Welcome to Shrimple Cmd " + PublicVariables.VersionNum);
             Console.WriteLine("Type 'help' for a list of commands");
+            Console.WriteLine("Type 'Shrimple' for a small documentation on some features.");
             Console.WriteLine("Beware: Still in development, expect bugs and incomplete things!");
             Console.WriteLine("*********************************");
             Console.WriteLine();
@@ -86,5 +103,72 @@ namespace ConsoleApp
 
             return userInput;
         }
+
+        static string[] ExpandRangeSyntax(string userInput)
+        {
+            string pattern = @"\{(\d+)\.\.(\d+)\}";
+            Match match = Regex.Match(userInput, pattern);
+
+            if (!match.Success)
+            {
+                return new[] { userInput };
+            }
+
+            int start = int.Parse(match.Groups[1].Value);
+            int end = int.Parse(match.Groups[2].Value);
+            string prefix = userInput.Substring(0, match.Index);
+            string suffix = userInput.Substring(match.Index + match.Length);
+
+            return Enumerable.Range(start, end - start + 1)
+                             .Select(i => prefix + i + suffix)
+                             .ToArray();
+        }
+
+static void ExecuteFile(string command)
+{
+    try
+    {
+        var process = new ProcessStartInfo
+        {
+            FileName = "cmd",
+            Arguments = $"/c {command}",
+            RedirectStandardOutput = true,  // Redirect the output
+            RedirectStandardError = true,   // Redirect the error stream as well
+            UseShellExecute = false,
+            CreateNoWindow = true
+        };
+
+        var processExecution = Process.Start(process);
+
+        if (processExecution != null)
+        {
+            string output = processExecution.StandardOutput.ReadToEnd();
+            string error = processExecution.StandardError.ReadToEnd();
+
+            if (!string.IsNullOrEmpty(output))
+            {
+                Console.WriteLine(output); // Output the standard output
+            }
+
+            if (!string.IsNullOrEmpty(error))
+            {
+                Console.ForegroundColor = ConsoleColor.Red;  // Set red color for errors
+                Console.WriteLine(error);  // Output the error stream
+                Console.ResetColor();
+            }
+
+            processExecution.WaitForExit();
+        }
+        else
+        {
+            Console.WriteLine("Failed to execute command.");
+        }
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Error executing command: {ex.Message}");
+    }
+}
+
     }
 }

@@ -22,6 +22,12 @@ namespace CommandListClass
             commandMap.Add("exit", commands.exit.Exit.Execute);
             commandMap.Add("cd", commands.cd.Cd.Execute);
             commandMap.Add("rm", commands.rm.Rm.Execute);
+            commandMap.Add("touch", commands.touch.Touch.Execute);
+            commandMap.Add("cls", CoreUtils.CommandPromptHandler.CommandPromptTools.ClearConsole);
+            commandMap.Add("clear", CoreUtils.CommandPromptHandler.CommandPromptTools.ClearConsole);
+            commandMap.Add("beep", CoreUtils.CommandPromptHandler.CommandPromptTools.Beep);
+            commandMap.Add("shrimple", commands.ShrimpleCommand.Shrimple.Execute);
+            commandMap.Add("constitle", commands.WinTitle.ConsTitle.Execute);
         }
         public void ExecuteCommand(string input)
         {

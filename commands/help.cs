@@ -27,7 +27,8 @@ namespace commands.help
             { "pwd", "pwd\n  Displays the current directory path.\n  Usage: pwd" },
             { "exit", "exit\n  Exits the application.\n  Usage: exit" },
             { "cd", "cd [directory]\n  Changes the current directory to the specified directory.\n  Usage: cd [directory]" },
-            { "rm", "rm [file]\n  Removes the specified file or directory. Can also use wildcards like *.zip.\n  Usage: rm filename or rm *.zip" }
+            { "rm", "rm [file]\n  Removes the specified file or directory. Can also use wildcards like *.zip.\n  Usage: rm filename or rm *.zip" },
+            { "touch", "touch [file]\n Creates files, if the given file name does exist, it will modify the Last modified timestamp.\n Usage: touch [file]"}
         };
 
         public static void Execute(string[] args)
@@ -44,6 +45,11 @@ Available commands:
   exit                     Exit the application
   cd [directory]           Change the directory
   rm [file]                Remove the specified file or directory
+  touch [file]             Creates files and modifies Last modified timestamp.
+  beep [frequency] [time in milliseconds]             Creates a beep sound.
+  cls/clear             Clears the screen.
+  shrimple              A short documentation on the program.
+  constitle [Window Title]            Changes the console title.
 
 Use 'help [command]' for detailed information on a specific command.
 ");

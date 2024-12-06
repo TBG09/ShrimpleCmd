@@ -9,14 +9,11 @@ namespace commands.dir
     {
         public static void Execute(string[] args)
         {
-            // Default settings
             string directoryPath = PublicVariables.currentDirectory;
             bool showHidden = false;
             bool showSystem = false;
             bool showFileSize = false;
             string fileSizeUnit = null;
-
-            // Parse arguments for options and directory path
             for (int i = 0; i < args.Length; i++)
             {
                 switch (args[i].ToLower())
@@ -49,8 +46,6 @@ namespace commands.dir
                         return;
                 }
             }
-
-            // Ensure the path is correctly rooted
             if (!Path.IsPathRooted(directoryPath))
                 directoryPath = Path.Combine(PublicVariables.currentDirectory, directoryPath);
 
@@ -59,8 +54,6 @@ namespace commands.dir
                 Console.WriteLine($"Error: Directory '{directoryPath}' does not exist.");
                 return;
             }
-
-            // Get and sort directory content: directories first, then files
             var dirContent = Directory.GetFileSystemEntries(directoryPath)
                 .OrderBy(entry => (File.GetAttributes(entry) & FileAttributes.Directory) == 0) // Sort directories before files
                 .ToArray();
@@ -73,23 +66,16 @@ namespace commands.dir
                 {
                     FileAttributes attributes = File.GetAttributes(entry);
                     string entryName = Path.GetFileName(entry);
-
-                    // Skip hidden files if -h is not specified
                     if (!showHidden && (attributes & FileAttributes.Hidden) == FileAttributes.Hidden)
                         continue;
-
-                    // Skip system files if -s is not specified
                     if (!showSystem && (attributes & FileAttributes.System) == FileAttributes.System)
                         continue;
-
-                    // Display directories
                     if ((attributes & FileAttributes.Directory) == FileAttributes.Directory)
                     {
                         Console.WriteLine("[Directory] " + entryName);
                     }
                     else
                     {
-                        // Handle file size display
                         string sizeInfo = "";
                         if (showFileSize)
                         {
@@ -114,8 +100,6 @@ namespace commands.dir
                 }
             }
         }
-
-        // Format file size based on specified unit
         static string FormatFileSize(long bytes, string unit)
         {
             if (string.IsNullOrEmpty(unit)) return $" ({bytes} B)";
