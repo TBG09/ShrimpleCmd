@@ -132,7 +132,7 @@ static void ExecuteFile(string command)
         {
             FileName = "cmd",
             Arguments = $"/c {command}",
-            RedirectStandardOutput = true,  // Redirect the output
+            RedirectStandardOutput = true,  // Redirect the standard output
             RedirectStandardError = true,   // Redirect the error stream as well
             UseShellExecute = false,
             CreateNoWindow = true
@@ -142,22 +142,27 @@ static void ExecuteFile(string command)
 
         if (processExecution != null)
         {
+            // Read the output asynchronously
             string output = processExecution.StandardOutput.ReadToEnd();
             string error = processExecution.StandardError.ReadToEnd();
 
+
             if (!string.IsNullOrEmpty(output))
             {
-                Console.WriteLine(output); // Output the standard output
+                Console.ForegroundColor = ConsoleColor.Cyan; 
+                Console.WriteLine(output);
+                Console.ResetColor(); 
             }
 
+            // Output errors in red
             if (!string.IsNullOrEmpty(error))
             {
-                Console.ForegroundColor = ConsoleColor.Red;  // Set red color for errors
-                Console.WriteLine(error);  // Output the error stream
-                Console.ResetColor();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(error);
+                Console.ResetColor(); 
             }
 
-            processExecution.WaitForExit();
+            processExecution.WaitForExit(); 
         }
         else
         {
