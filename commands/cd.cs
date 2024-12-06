@@ -23,7 +23,6 @@ namespace commands.cd {
                     if (parentDirectory != null) {
                         Environment.CurrentDirectory = parentDirectory;
                         PublicVariables.currentDirectory = parentDirectory;
-                        Console.WriteLine($"Changed directory to: {parentDirectory}");
                     } else {
                         Console.WriteLine("Already at the root directory.");
                     }
