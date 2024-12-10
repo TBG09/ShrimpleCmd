@@ -1,6 +1,8 @@
 This is just a random console app for C# Learning.
 Written by chatgpt cuz i lazy
 
+# Net 8.0 needed to run and build!!1!1! #
+
 # ShrimpleCmd - C# Console Application
 
 ## How to Compile the Application
