@@ -1,14 +1,16 @@
 # ShrimpleCmd - C# Console Application
 
-This is just a random console app for C# learning.
-Written by ChatGPT cuz i was too lazy
-**Linux support in the app is deprecated!**
+- This is just a random console app for C# learning.
+- Written by ChatGPT cuz i was too lazy
+- **Linux support in the app is deprecated!**
+- But building for linux should still work
 
 ## Prerequisites
 
 Before you can build the application, make sure you have the following installed:
 
 - [.NET 8.0 SDK](https://dotnet.microsoft.com/download) (required to run and build the application)
+- [Git](https://git-scm.com/downloads) (optional)
 
 ## How to Compile the Application
 
