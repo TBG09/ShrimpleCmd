@@ -72,6 +72,8 @@ Once you have successfully built the application, you can run it using the follo
 ```bash
 dotnet run
 ```
+Or you can run ```bin\build_type\net8.0\ShrimpleCmd.exe```
+- **Replace build_type with the build type you used**
 
 This will execute the application in the terminal.
 
