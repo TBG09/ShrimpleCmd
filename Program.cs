@@ -6,15 +6,19 @@ using CommandListClass;
 using PublicVars;
 using System.Diagnostics;
 using System.Reflection;
+using ConfigHandler;
 
 namespace ConsoleApp
 {
     class Program
     {
+
         static void Main(string[] args)
         {
+            ConfigLoader configLoader = new ConfigLoader();
             ShowStartupText();
             CommandList commandList = new CommandList();
+            
 
             while (true)
             {
@@ -142,7 +146,6 @@ static void ExecuteFile(string command)
 
         if (processExecution != null)
         {
-            // Read the output asynchronously
             string output = processExecution.StandardOutput.ReadToEnd();
             string error = processExecution.StandardError.ReadToEnd();
 
@@ -153,8 +156,6 @@ static void ExecuteFile(string command)
                 Console.WriteLine(output);
                 Console.ResetColor(); 
             }
-
-            // Output errors in red
             if (!string.IsNullOrEmpty(error))
             {
                 Console.ForegroundColor = ConsoleColor.Red;
