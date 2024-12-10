@@ -1,16 +1,21 @@
-This is just a random console app for C# Learning.
-Written by chatgpt cuz i lazy
-
-# Net 8.0 needed to run and build!!1!1! #
-
 # ShrimpleCmd - C# Console Application
+
+This is just a random console app for C# learning.
+Written by ChatGPT cuz i was too lazy
+**Linux support in the app is deprecated!**
+
+## Prerequisites
+
+Before you can build the application, make sure you have the following installed:
+
+- [.NET 8.0 SDK](https://dotnet.microsoft.com/download) (required to run and build the application)
 
 ## How to Compile the Application
 
 ### Option 1: Clone the Repository
 If you want to clone the repository using Git, follow these steps:
 
-1. Open a terminal/command prompt.
+1. Open a Command Prompt (press `Win + R`, type `cmd`, and hit Enter).
 2. Run the following command to clone the repository:
    ```bash
    git clone https://github.com/TBG09/ShrimpleCmd.git
@@ -27,24 +32,17 @@ Alternatively, you can download the repository as a ZIP file:
 2. Click the green "Code" button and select "Download ZIP."
 3. Extract the ZIP file to your desired location.
 
-## Prerequisites
-
-Before you can build the application, make sure you have the following installed:
-
-- [.NET SDK](https://dotnet.microsoft.com/download) (make sure to install the version compatible with the project)
-  
 ## Building the Application
 
 ### Build Normally (Debug)
 
 To build the application normally (in Debug mode):
 
-1. Open a terminal/command prompt.
-2. Navigate to the project directory if you haven’t already:
+1. Open a Command Prompt and navigate to the project directory if you haven’t already:
    ```bash
    cd ShrimpleCmd
    ```
-3. Run the following command to restore dependencies and build the application:
+2. Run the following command to restore dependencies and build the application:
    ```bash
    dotnet build
    ```
@@ -55,17 +53,16 @@ This will build the project in Debug mode. The compiled application will be in t
 
 To build the application for release (optimized for production):
 
-1. Open a terminal/command prompt.
-2. Navigate to the project directory if you haven’t already:
+1. Open a Command Prompt and navigate to the project directory if you haven’t already:
    ```bash
    cd ShrimpleCmd
    ```
-3. Run the following command to restore dependencies and build the application in Release mode:
+2. Run the following command to restore dependencies and build the application in Release mode:
    ```bash
-   dotnet publish -c Release -r win-x64 --self-contained
+   dotnet build -c Release
    ```
 
-This will create a release build of your application in the `bin/Release/net5.0/win-x64/publish/` (adjust based on your .NET version) directory.
+This will create a release build of your application in the `bin/Release/net8.0/` directory (adjust based on your .NET version).
 
 ### Running the Application
 
@@ -76,6 +73,3 @@ dotnet run
 
 This will execute the application in the terminal.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
