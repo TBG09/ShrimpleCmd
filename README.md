@@ -10,7 +10,7 @@
 Before you can build the application, make sure you have the following installed:
 
 - [.NET 8.0 SDK](https://dotnet.microsoft.com/download) (required to run and build the application)
-- [Git](https://git-scm.com/downloads) (optional)
+- [Git](https://git-scm.com/downloads) (For cloning the repo, this is optional)
 
 ## How to Compile the Application
 
