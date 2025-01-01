@@ -8,8 +8,8 @@
 - But building for linux should still work  
 
  ## Credits
- [https://github.com/TBG09](Bluelist) - Programmer  
- [https://github.com/PolarT-py](Polart) - Artist
+ (https://github.com/TBG09)[Bluelist] - Programmer  
+ (https://github.com/PolarT-py)[Polart] - Artist
 
 ## Prerequisites
 
