@@ -1,3 +1,5 @@
+<img src="https://github.com/TBG09/Resources/blob/f554e0fd42af60e9567ee528d0535800f656e85e/shrimple3.png?raw=true" alt="Shrimple3" width="500">
+
 # ShrimpleCmd - C# Console Application
 
 - This is just a random console app for C# learning.
