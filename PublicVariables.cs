@@ -6,7 +6,7 @@ namespace PublicVars
 {
     public class PublicVariables
     {
-        public static string VersionNum = "1.0.0";
+        public static string VersionNum = "1.1.0";
         public static string osType = Environment.OSVersion.Platform.ToString().ToLower();
         public static string EnvVer = Environment.Version.ToString();
         public static string deviceArch = Environment.GetEnvironmentVariable("PROCESSOR_ARCHITECTURE");
@@ -73,7 +73,7 @@ namespace PublicVars
                 }
             }
 
-            return "Unknown Linux Distro"; // Default value if no known distro was found
+            return "Unknown Linux Distro"; 
         }
         
     }

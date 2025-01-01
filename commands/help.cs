@@ -50,6 +50,10 @@ Available commands:
   cls/clear             Clears the screen.
   shrimple              A short documentation on the program.
   constitle [Window Title]            Changes the console title.
+  pkill [process name] or -p [PID]            Kills a process by its name or PID
+  crypt [hash,list] [algorithm] [string]            Simple cryptography.
+  info            Just a bit of info.
+  assemblyView/asmview            Allows you to see classes, resources, methods, and some info on a .NET compiled library.
 
 Use 'help [command]' for detailed information on a specific command.
 ");

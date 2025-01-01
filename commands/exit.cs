@@ -6,6 +6,7 @@ namespace commands.exit
     {
         public static void Execute(string[] args)
         {
+            modloader.Modloader.UnloadMods();
             Environment.Exit(0);
         }
     }

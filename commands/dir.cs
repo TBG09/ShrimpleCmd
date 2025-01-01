@@ -31,14 +31,14 @@ namespace commands.dir
                         if (i + 1 < args.Length)
                         {
                             fileSizeUnit = args[i + 1].ToUpper();
-                            i++;  // Skip next argument since it's the unit
+                            i++;  
                         }
                         break;
                     case "-d":
                         if (i + 1 < args.Length)
                         {
                             directoryPath = args[i + 1];
-                            i++;  // Skip next argument since it's the path
+                            i++;  
                         }
                         break;
                     default:
@@ -55,7 +55,7 @@ namespace commands.dir
                 return;
             }
             var dirContent = Directory.GetFileSystemEntries(directoryPath)
-                .OrderBy(entry => (File.GetAttributes(entry) & FileAttributes.Directory) == 0) // Sort directories before files
+                .OrderBy(entry => (File.GetAttributes(entry) & FileAttributes.Directory) == 0) 
                 .ToArray();
 
             Console.WriteLine($"Objects in directory {directoryPath}:");
@@ -117,7 +117,7 @@ namespace commands.dir
                     size = bytes / (1024.0 * 1024 * 1024);
                     break;
                 default:
-                    return $" ({bytes} B)"; // Default to bytes if unit is unknown
+                    return $" ({bytes} B)"; 
             }
             return $" ({size:F2} {unit})";
         }

@@ -6,7 +6,6 @@ using CommandListClass;
 using PublicVars;
 using System.Diagnostics;
 using System.Reflection;
-using ConfigHandler;
 
 namespace ConsoleApp
 {
@@ -15,7 +14,7 @@ namespace ConsoleApp
 
         static void Main(string[] args)
         {
-            ConfigLoader configLoader = new ConfigLoader();
+            modloader.Modloader.LoadMods();
             ShowStartupText();
             CommandList commandList = new CommandList();
             
@@ -136,8 +135,8 @@ static void ExecuteFile(string command)
         {
             FileName = "cmd",
             Arguments = $"/c {command}",
-            RedirectStandardOutput = true,  // Redirect the standard output
-            RedirectStandardError = true,   // Redirect the error stream as well
+            RedirectStandardOutput = true,  
+            RedirectStandardError = true,   
             UseShellExecute = false,
             CreateNoWindow = true
         };
