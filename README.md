@@ -5,7 +5,11 @@
 - This is just a random console app for C# learning.
 - Written by ChatGPT cuz i was too lazy
 - **Linux support in the app is deprecated!**
-- But building for linux should still work
+- But building for linux should still work  
+
+ ## Credits
+ [https://github.com/TBG09](Bluelist) - Programmer  
+ [https://github.com/PolarT-py](Polart) - Artist
 
 ## Prerequisites
 
