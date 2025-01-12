@@ -39,6 +39,8 @@ namespace CommandListClass
             commandMap.Add("asmview", commands.assemblyView.AssemblyView.Execute);
             commandMap.Add("credits", commands.credits.Credits.Execute);
             commandMap.Add("csexec", commands.csExec.CsExec.Execute);
+            commandMap.Add("ver", commands.Version.version.Execute);
+            commandMap.Add("version", commands.Version.version.Execute);
         }
 
         

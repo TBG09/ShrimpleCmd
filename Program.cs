@@ -6,6 +6,7 @@ using CommandListClass;
 using PublicVars;
 using System.Diagnostics;
 using System.Reflection;
+using ConfigMain;
 
 namespace ConsoleApp
 {
@@ -14,6 +15,7 @@ namespace ConsoleApp
 
         static void Main(string[] args)
         {
+            ConfigMain.Config.ReadConfig();
             modloader.Modloader.LoadMods();
             ShowStartupText();
             CommandList commandList = new CommandList();
@@ -53,12 +55,15 @@ namespace ConsoleApp
 
         static void ShowStartupText()
         {
+            Config.ReadConfig();
             Console.WriteLine("*********************************");
             Console.WriteLine("Welcome to Shrimple Cmd " + PublicVariables.VersionNum);
             Console.WriteLine("Type 'help' for a list of commands");
             Console.WriteLine("Type 'Shrimple' for a small documentation on some features.");
             Console.WriteLine("Beware: Still in development, expect bugs and incomplete things!");
             Console.WriteLine("*********************************");
+            Console.WriteLine();
+            Console.WriteLine(Config.StartMessage);
             Console.WriteLine();
         }
 

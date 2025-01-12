@@ -6,7 +6,8 @@ namespace PublicVars
 {
     public class PublicVariables
     {
-        public static string VersionNum = "1.1.0";
+        public static string VersionNum = "Pre-Release 1.2.2";
+        public static string VersionID = "PR122";
         public static string osType = Environment.OSVersion.Platform.ToString().ToLower();
         public static string EnvVer = Environment.Version.ToString();
         public static string deviceArch = Environment.GetEnvironmentVariable("PROCESSOR_ARCHITECTURE");
