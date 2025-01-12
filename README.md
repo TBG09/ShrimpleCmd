@@ -3,7 +3,7 @@
 # ShrimpleCmd - C# Console Application
 
 - This is just a random console app for C# learning.
-- Written by ChatGPT cuz i was too lazy
+- Description Written by ChatGPT cuz i was too lazy
 - **Linux support in the app is deprecated!**
 - But building for linux should still work  
 
