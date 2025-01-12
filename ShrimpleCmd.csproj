@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <ApplicationIcon>shrimple.ico</ApplicationIcon>
@@ -14,11 +14,8 @@
   <ItemGroup>
   </ItemGroup>
 
-<<<<<<< HEAD
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
-=======
->>>>>>> c638de8fe9fa0988c804e969c7380f1996040fb4
 </Project>
